@@ -1,0 +1,3 @@
+export const ENVS = {
+    BASE_URL_HTTP_CLIENT: process.env.NEXT_PUBLIC_BASE_URL_HTTP_CLIENT
+}
