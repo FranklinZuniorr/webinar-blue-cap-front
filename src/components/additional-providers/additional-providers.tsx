@@ -16,8 +16,8 @@ export const AdditionalProviders = ({ children }: AdditionalProvidersProps) => {
   return (
     <>
       <Toaster position="bottom-center" />
-      <TopBar />
       <QueryClientProvider client={queryClient}>
+        <TopBar />
         {children}
         {modal}
       </QueryClientProvider>

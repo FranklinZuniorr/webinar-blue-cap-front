@@ -6,6 +6,7 @@ import '@/configs/prime-theme/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
+import { Authentication } from '@/components/authentication';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={inter.className}>
-        <AdditionalProviders>{children}</AdditionalProviders>
+        <AdditionalProviders>
+          <Authentication>{children}</Authentication>
+        </AdditionalProviders>
       </body>
     </html>
   );
