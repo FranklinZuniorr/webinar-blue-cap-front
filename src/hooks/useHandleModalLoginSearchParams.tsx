@@ -21,7 +21,7 @@ export const useHandleModalLoginSearchParams =
     const isOpenModalLogin =
       modalSearchParams === ENUM_MODAL_SEARCH_PARAMS_TYPES.LOGIN;
 
-    const handleSetSearchParamsModalLogin = () => {
+    const handleCloseModal = () => {
       const params = new URLSearchParams(searchParams.toString());
 
       params.delete(MODAL_LOGIN_OPENED_SEARCH_PARAMS_KEY);
@@ -31,10 +31,7 @@ export const useHandleModalLoginSearchParams =
 
     return {
       modal: (
-        <ModalLogin
-          isOpen={isOpenModalLogin}
-          onClose={handleSetSearchParamsModalLogin}
-        />
+        <ModalLogin isOpen={isOpenModalLogin} onClose={handleCloseModal} />
       ),
     };
   };
