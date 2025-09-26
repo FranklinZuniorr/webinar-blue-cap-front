@@ -6,11 +6,10 @@ export const httpClient = axios.create({
   baseURL: ENVS.BASE_URL_HTTP_CLIENT,
 });
 
-export const setTokenHttpClient = (
-  newToken?: string,
-) => {
-  httpClient.defaults.headers.common.Authorization =
-    newToken ? `Bearer ${newToken}` : undefined;
+export const setTokenHttpClient = (newToken?: string) => {
+  httpClient.defaults.headers.common.Authorization = newToken
+    ? `Bearer ${newToken}`
+    : undefined;
 };
 
 httpClient.interceptors.response.use(
