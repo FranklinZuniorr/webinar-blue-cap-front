@@ -8,6 +8,8 @@ import { userSchema } from '../../schemas';
 import { useGetLoginUser } from '../../api/get-login-user';
 import { setLocalStorageAuthToken } from '@/helpers/auth';
 import { useState } from 'react';
+import { setTokenHttpClient } from '@/configs/axios';
+import { invalidateGetCheckToken } from '@/api/get-check-token';
 
 interface LoginProps {
   onClose: () => void;
@@ -22,6 +24,8 @@ export const Login = ({ onClose }: LoginProps) => {
 
   const handleSuccessLogin = (token: string) => {
     setLocalStorageAuthToken(token);
+    setTokenHttpClient(token);
+    invalidateGetCheckToken();
     onClose();
   };
 
