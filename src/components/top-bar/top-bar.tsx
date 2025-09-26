@@ -7,6 +7,8 @@ import {
 } from '@/constants';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Spinner } from '../spinner';
+import { Button } from 'primereact/button';
+import { setLocalStorageAuthToken } from '@/helpers/auth';
 
 export const TopBar = () => {
   const router = useRouter();
@@ -27,26 +29,33 @@ export const TopBar = () => {
     router.push(`?${params.toString()}`);
   };
 
-  return (
-    <div className="bg-basic-gray flex items-center justify-between fixed left-0 right-0 h-[4rem] top-0 border-b border-strong-gray px-8 max-md:px-3">
-      <div className="font-bold text-primary">🧢 Webinar Blue Cap</div>
+  const handleLogout = () => {
+    setLocalStorageAuthToken('');
+    window.location.reload();
+  };
 
-      {isPending ? (
-        <Spinner className="!text-primary" />
-      ) : (
-        <>
-          {isLogged ? (
-            <div>{data.data.email}</div>
-          ) : (
-            <div
-              className="text-basic-text cursor-pointer"
-              onClick={handleSetSearchParamsModalLogin}
-            >
-              Fazer login
-            </div>
-          )}
-        </>
-      )}
+  return (
+    <div className="bg-basic-gray flex items-center justify-center fixed left-0 right-0 h-[4rem] top-0 border-b border-strong-gray">
+      <div className="w-full max-w-[60rem] flex items-center justify-between px-3">
+        <div className="font-bold !text-primary">🧢 Webinar Blue Cap</div>
+
+        {isPending ? (
+          <Spinner className="!text-primary" />
+        ) : (
+          <>
+            {isLogged ? (
+              <Button icon="pi pi-sign-out" onClick={handleLogout} />
+            ) : (
+              <div
+                className="text-basic-text cursor-pointer"
+                onClick={handleSetSearchParamsModalLogin}
+              >
+                Fazer login
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };
