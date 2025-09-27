@@ -37,7 +37,7 @@ export const Webinars = ({ defaultData }: WebinarsProps) => {
       ) : (
         <>
           {hasWebinars ? (
-            <div className="flex gap-4 mt-20 max-w-[70rem] justify-center flex-wrap w-full">
+            <div className="flex gap-4 mt-20 max-md:mt-10 max-w-[70rem] justify-center flex-wrap w-full">
               {normalizedWebinars.map((webinar) => (
                 <WebinarCard
                   key={webinar.id}
@@ -47,7 +47,9 @@ export const Webinars = ({ defaultData }: WebinarsProps) => {
               ))}
             </div>
           ) : (
-            <span className="mt-20">Ops, nenhum webinar encontrado!</span>
+            <span className="mt-20 max-md:mt-10">
+              Ops, nenhum webinar encontrado!
+            </span>
           )}
         </>
       )}
