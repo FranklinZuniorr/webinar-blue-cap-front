@@ -16,7 +16,7 @@ export const ModalLogin = ({ isOpen, onClose }: ModalLoginProps) => {
     <Dialog
       header="Login e registro"
       visible={isOpen}
-      style={{ width: '50vw' }}
+      className="w-[50rem] max-md:w-[95%]"
       onHide={onClose}
     >
       <TabView
