@@ -6,6 +6,10 @@ import { TopBar } from '../top-bar';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@/configs/react-query';
 import { useHandleModalLoginSearchParams } from '@/hooks/useHandleModalLoginSearchParams';
+import { addLocale } from 'primereact/api';
+import { ptBRLocale } from '@/constants';
+
+addLocale('pt-BR', ptBRLocale);
 
 interface AdditionalProvidersProps {
   children: ReactNode;

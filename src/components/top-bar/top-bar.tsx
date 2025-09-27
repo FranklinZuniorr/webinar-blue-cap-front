@@ -35,7 +35,7 @@ export const TopBar = () => {
   };
 
   return (
-    <div className="bg-basic-gray flex items-center justify-center fixed left-0 right-0 h-[4rem] top-0 border-b border-strong-gray">
+    <div className="bg-white flex items-center justify-center fixed left-0 right-0 h-[4rem] top-0 border-b border-strong-gray z-10">
       <div className="w-full max-w-[60rem] flex items-center justify-between px-3">
         <div className="font-bold !text-primary">🧢 Webinar Blue Cap</div>
 
