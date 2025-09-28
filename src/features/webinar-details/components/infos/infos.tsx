@@ -36,7 +36,7 @@ export const Infos = ({ data }: InfosProps) => {
   const finishedText = isFinished ? 'Indisponível' : 'Disponível';
   const normalizedDuration = dayjs.duration(duration, 'seconds').asMinutes();
   const dynamicDurationText = normalizedDuration > 1 ? 'minutos' : 'minuto';
-  const normalizedStartsDate = dayjs(startsDate).format('DD/MM/YYYY hh:mm:ss');
+  const normalizedStartsDate = dayjs(startsDate).format('DD/MM/YYYY HH:mm:ss');
 
   return (
     <div className="w-full flex items-start pt-6 justify-center bg-[linear-gradient(to_bottom,#c4d7ff78,#d7e0ff80,#e7eaff8c,#f4f4fe7d,#ffffff85)] px-3 h-[30rem]">
