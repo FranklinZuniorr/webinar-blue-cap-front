@@ -24,6 +24,7 @@ export const UserEnrollments = () => {
     );
 
   const normalizedEnrollments = dataEnrollments?.data || [];
+  const hasEnrollments = normalizedEnrollments.length > 0;
 
   const handleVerifyLogin = useCallback(() => {
     if (isFetchingCheckToken) return;
@@ -54,11 +55,19 @@ export const UserEnrollments = () => {
         {isPendingGetUserEnrollments ? (
           <Skeleton />
         ) : (
-          <div className="flex flex-col gap-3">
-            {normalizedEnrollments.map((enrollment) => (
-              <EnrollmentCard key={enrollment.id} infos={enrollment} />
-            ))}
-          </div>
+          <>
+            {hasEnrollments ? (
+              <div className="flex flex-col gap-3">
+                {normalizedEnrollments.map((enrollment) => (
+                  <EnrollmentCard key={enrollment.id} infos={enrollment} />
+                ))}
+              </div>
+            ) : (
+              <span className="w-full flex justify-center mt-5 text-center">
+                Ops, nenhuma inscrição encontrada!
+              </span>
+            )}
+          </>
         )}
       </div>
     </div>

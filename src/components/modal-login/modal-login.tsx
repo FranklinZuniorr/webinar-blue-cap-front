@@ -27,12 +27,7 @@ export const ModalLogin = ({ isOpen, onClose }: ModalLoginProps) => {
           <Login onClose={onClose} />
         </TabPanel>
         <TabPanel header="Criar conta">
-          <Register
-            onClose={() => {
-              onClose();
-              setTabIndex(0);
-            }}
-          />
+          <Register onClose={() => setTabIndex(0)} />
         </TabPanel>
       </TabView>
     </Dialog>
