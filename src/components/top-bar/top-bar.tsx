@@ -49,7 +49,18 @@ export const TopBar = () => {
         ) : (
           <>
             {isLogged ? (
-              <Button icon="pi pi-sign-out" onClick={handleLogout} />
+              <div className="flex items-center gap-2">
+                <Button
+                  className="p-1 !w-[2rem] !h-[2rem]"
+                  icon="pi pi-heart"
+                  onClick={() => redirect('/usuario-inscricoes')}
+                />
+                <Button
+                  className="p-1 !w-[2rem] !h-[2rem]"
+                  icon="pi pi-sign-out"
+                  onClick={handleLogout}
+                />
+              </div>
             ) : (
               <div
                 className="text-basic-text cursor-pointer"
