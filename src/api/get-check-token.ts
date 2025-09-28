@@ -5,7 +5,7 @@ import { generateReactQuery } from '@/helpers/react-query';
 
 const GET_CHECK_TOKEN_KEY = 'GET_CHECK_TOKEN_KEY';
 
-interface GetCheckTokenResponse {
+export interface GetCheckTokenResponse {
   data: {
     createdAt: string;
     email: string;

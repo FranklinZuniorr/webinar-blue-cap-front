@@ -5,7 +5,7 @@ import {
   ENUM_MODAL_SEARCH_PARAMS_TYPES,
   MODAL_LOGIN_OPENED_SEARCH_PARAMS_KEY,
 } from '@/constants';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { redirect, useRouter, useSearchParams } from 'next/navigation';
 import { Spinner } from '../spinner';
 import { Button } from 'primereact/button';
 import { setLocalStorageAuthToken } from '@/helpers/auth';
@@ -37,7 +37,12 @@ export const TopBar = () => {
   return (
     <div className="bg-white flex items-center justify-center fixed left-0 right-0 h-[4rem] top-0 border-b border-strong-gray z-10">
       <div className="w-full max-w-[60rem] flex items-center justify-between px-3">
-        <div className="font-bold !text-primary">🧢 Webinar Blue Cap</div>
+        <div
+          className="font-bold !text-primary cursor-pointer"
+          onClick={() => redirect('/')}
+        >
+          🧢 Webinar Blue Cap
+        </div>
 
         {isPending ? (
           <Spinner className="!text-primary" />
