@@ -10,6 +10,7 @@ import { Welcome } from './components/welcome';
 import { Filters } from './components/filters';
 import { WebinarCard } from './components/webinar-card';
 import { SkeletonCards } from './components/skeleton-cards';
+import { redirect } from 'next/navigation';
 
 interface WebinarsProps {
   defaultData: Webinar[];
@@ -42,7 +43,7 @@ export const Webinars = ({ defaultData }: WebinarsProps) => {
                 <WebinarCard
                   key={webinar.id}
                   infos={webinar}
-                  onClick={() => alert('testando')}
+                  onClick={() => redirect(`/webinar-detalhes/${webinar.id}`)}
                 />
               ))}
             </div>

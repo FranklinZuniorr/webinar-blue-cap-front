@@ -8,6 +8,10 @@ import { queryClient } from '@/configs/react-query';
 import { useHandleModalLoginSearchParams } from '@/hooks/useHandleModalLoginSearchParams';
 import { addLocale } from 'primereact/api';
 import { ptBRLocale } from '@/constants';
+import dayjs from 'dayjs';
+import duration from 'dayjs/plugin/duration';
+
+dayjs.extend(duration);
 
 addLocale('pt-BR', ptBRLocale);
 

@@ -71,7 +71,6 @@ export const WebinarCard = ({ infos, onClick }: WebinarCardProps) => {
       <Button
         className="mt-3 self-end !text-[0.875rem]"
         label="Tenho interesse"
-        disabled={infos.isFinished}
         onClick={onClick}
       />
       {infos.isFinished ? (
