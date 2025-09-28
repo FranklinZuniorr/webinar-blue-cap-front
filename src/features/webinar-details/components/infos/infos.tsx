@@ -39,13 +39,13 @@ export const Infos = ({ data }: InfosProps) => {
   const normalizedStartsDate = dayjs(startsDate).format('DD/MM/YYYY hh:mm:ss');
 
   return (
-    <div className="w-full flex items-start pt-6 justify-center bg-[linear-gradient(to_bottom,#c4d7ff,#d7e0ff,#e7eaff,#f4f4fe,#ffffff)] px-3 h-[30rem]">
-      <div className="flex flex-col w-full max-w-[40rem] h-fit rounded-3xl p-3 pl-5 pr-5 !pb-10 backdrop-blur-md bg-basic-white relative overflow-hidden">
+    <div className="w-full flex items-start pt-6 justify-center bg-[linear-gradient(to_bottom,#c4d7ff78,#d7e0ff80,#e7eaff8c,#f4f4fe7d,#ffffff85)] px-3 h-[30rem]">
+      <div className="flex flex-col shadow-md w-full max-w-[40rem] h-fit rounded-3xl p-3 pl-5 pr-5 !pb-10 backdrop-blur-md bg-basic-white relative overflow-hidden">
         <div className="flex w-full text-center justify-center font-bold !text-primary tracking-[0.2rem] mt-3">
           {summary}
         </div>
 
-        <div className="flex flex-wrap gap-2 justify-center mt-3">
+        <div className="flex flex-wrap gap-2 justify-center mt-3 border-b border-neutral-300 pb-[1.5rem]">
           {normalizedCategories.map((category) => (
             <span
               key={category.code}
