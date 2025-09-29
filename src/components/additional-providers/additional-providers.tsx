@@ -1,15 +1,15 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { TopBar } from '../top-bar';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@/configs/react-query';
-import { useHandleModalLoginSearchParams } from '@/hooks/useHandleModalLoginSearchParams';
 import { addLocale } from 'primereact/api';
 import { ptBRLocale } from '@/constants';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
+import { RenderModalLogin } from '../render-modal-login';
 
 dayjs.extend(duration);
 
@@ -20,14 +20,15 @@ interface AdditionalProvidersProps {
 }
 
 export const AdditionalProviders = ({ children }: AdditionalProvidersProps) => {
-  const { modal } = useHandleModalLoginSearchParams();
   return (
     <>
       <Toaster position="bottom-center" />
       <QueryClientProvider client={queryClient}>
-        <TopBar />
+        <Suspense fallback={null}>
+          <TopBar />
+          <RenderModalLogin />
+        </Suspense>
         {children}
-        {modal}
       </QueryClientProvider>
     </>
   );
