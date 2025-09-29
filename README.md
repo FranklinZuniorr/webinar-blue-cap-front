@@ -45,7 +45,7 @@ src/
 - Sistema de cadastro e login (gerenciamento de usuários)
 - Listagem de webinars
 - Detalhes completos de cada webinar
-- Incrição em webinars
+- Inscrição em webinars
 
 ## 📦 Estrutura por Features
 
