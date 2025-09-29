@@ -38,7 +38,7 @@ export const TopBar = () => {
     <div className="bg-white flex items-center justify-center fixed left-0 right-0 h-[4rem] top-0 border-b border-strong-gray z-10">
       <div className="w-full max-w-[60rem] flex items-center justify-between px-3">
         <div
-          className="font-bold !text-primary cursor-pointer"
+          className="font-bold !text-primary cursor-pointer select-none"
           onClick={() => redirect('/')}
         >
           🧢 Webinar Blue Cap
@@ -63,7 +63,7 @@ export const TopBar = () => {
               </div>
             ) : (
               <div
-                className="text-basic-text cursor-pointer"
+                className="text-basic-text cursor-pointer select-none"
                 onClick={handleSetSearchParamsModalLogin}
               >
                 Fazer login
