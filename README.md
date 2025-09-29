@@ -1,4 +1,3 @@
-```
 # Webinar Blue Cap
 
 **Webinar Blue Cap** é um projeto front-end desenvolvido com **Next.js**, construído com foco em **clean code**, **SOLID principles** e **arquitetura baseada em features inspirada em DDD**. O projeto é modular e escalável, com responsabilidades bem definidas e separação clara de escopos.
@@ -8,7 +7,6 @@
 ## 🏗 Estrutura do Projeto
 
 O projeto segue uma arquitetura por **features**, garantindo isolamento e fácil manutenção.
-```
 
 ```
 src/
