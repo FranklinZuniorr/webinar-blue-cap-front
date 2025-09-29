@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+```
+# Webinar Blue Cap
 
-## Getting Started
+**Webinar Blue Cap** é um projeto front-end desenvolvido com **Next.js**, construído com foco em **clean code**, **SOLID principles** e **arquitetura baseada em features inspirada em DDD**. O projeto é modular e escalável, com responsabilidades bem definidas e separação clara de escopos.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🏗 Estrutura do Projeto
+
+O projeto segue uma arquitetura por **features**, garantindo isolamento e fácil manutenção.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+src/
+├── api/                    # Chamadas de API globais
+├── app/                    # Roteamento
+├── components/             # Componentes reutilizáveis
+├── configs/                # Configurações e providers
+├── constants/              # Constantes globais
+├── features/               # Funcionalidades com escopo bem definido
+│   ├── user-enrollments/
+│   ├── webinar-details/
+│   └── webinars/
+│       ├── api/
+│       ├── components/
+│       ├── interfaces/
+│       └── webinars.tsx
+├── helpers/                # Funções utilitárias
+├── hooks/                  # Custom hooks
+└── interfaces/             # Tipagens globais
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Tecnologias Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Dependências
 
-## Learn More
+- **React 19**, **Next.js 15**
+- **React Query** (`@tanstack/react-query`) para gerenciamento de estado e cache
+- **Axios** para requisições HTTP
+- **React Hook Form** e **Yup** para validação de formulários
+- **PrimeReact**, **PrimeIcons** e **PrimeFlex** para UI
+- **Day.js** para manipulação de datas
+- **React Hot Toast** para notificações
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Funcionalidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Sistema de cadastro e login (gerenciamento de usuários)
+- Listagem de webinars
+- Detalhes completos de cada webinar
+- Incrição em webinars
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Estrutura por Features
 
-## Deploy on Vercel
+Cada feature possui:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Components**: componentes específicos da feature
+- **API**: chamadas e integração com backend
+- **Interfaces**: tipagens da feature
+- **Pages/TSX**: páginas ou blocos de UI específicos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Garante isolamento, escalabilidade e aderência a **SOLID**.
+
+## 💻 Scripts Disponíveis
+
+```bash
+# Instalar dependências
+yarn install
+
+# Rodar em modo de desenvolvimento
+yarn dev
+
+# Build para produção
+yarn build
+
+# Rodar servidor de produção local
+yarn start
+```
+
+## 📖 Boas Práticas Adotadas
+
+- **Clean Code**: código legível, organizado e de fácil manutenção
+- **SOLID Principles**: separação de responsabilidades, fácil testabilidade
+- **DDD Inspired**: features isoladas, escopos bem definidos e modularidade
+- **Responsabilidade Única**: cada módulo e componente tem função única
+- **Reutilização**: componentes e hooks reutilizáveis em todo o projeto
+
+---
