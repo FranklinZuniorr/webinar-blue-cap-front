@@ -34,7 +34,9 @@ export const Infos = ({ data }: InfosProps) => {
 
   const normalizedSpeakers = speakers.join(', ');
   const finishedText = isFinished ? 'Indisponível' : 'Disponível';
-  const normalizedDuration = dayjs.duration(duration, 'seconds').asMinutes();
+  const normalizedDuration = Math.ceil(
+    dayjs.duration(duration, 'seconds').asMinutes(),
+  );
   const dynamicDurationText = normalizedDuration > 1 ? 'minutos' : 'minuto';
   const normalizedStartsDate = dayjs(startsDate).format('DD/MM/YYYY HH:mm:ss');
 
