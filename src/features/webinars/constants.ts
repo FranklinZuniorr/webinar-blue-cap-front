@@ -12,3 +12,10 @@ export const CATEGORIES_OPTIONS: DropdownOption<ENUM_WEBINAR_CATEGORIES>[] = [
   { name: 'Negócios', code: ENUM_WEBINAR_CATEGORIES.BUSINESS },
   { name: 'Geral', code: ENUM_WEBINAR_CATEGORIES.GENERAL },
 ];
+
+export const SEARCH_PARAMS_FILTER_KEYS: Record<string, string> = {
+  language: 'idioma',
+  category: 'categoria',
+  startDate: 'dataInicial',
+  endDate: 'dataFinal',
+};

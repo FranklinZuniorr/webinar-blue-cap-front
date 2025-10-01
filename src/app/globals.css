@@ -11,6 +11,20 @@
   --color-basic-text: #64748b;
   --color-basic-white: #ffffff94;
   --color-neutral-gray: #a1a1a1;
+
+  --animate-entrance: entrance 2s ease 0s 1 normal forwards;
+
+  @keyframes entrance {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 html {

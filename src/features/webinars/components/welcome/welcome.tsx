@@ -1,7 +1,7 @@
 export const Welcome = () => {
   return (
     <div className="w-full mb-4 relative flex items-center justify-center bg-[url(/background.jpg)] bg-center bg-no-repeat bg-cover px-3 h-[15rem]">
-      <span className="!text-primary font-bold text-[1.5rem] max-w-[30rem] text-center z-[1]">
+      <span className="!text-primary font-bold text-[1.5rem] max-w-[30rem] text-center z-[1] animate-entrance">
         Vista o Blue Cap e descubra o poder do aprendizado.
       </span>
 
