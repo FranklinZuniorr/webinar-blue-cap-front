@@ -1,3 +1,5 @@
+'use client';
+
 import { useCountdownTime } from '@/hooks/useCountdownTime';
 import { CATEGORIES_OPTIONS, LANGUAGES_OPTIONS } from '../../constants';
 import { Webinar } from '../../interfaces';
